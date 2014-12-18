@@ -336,8 +336,12 @@ OSCresponder(s.addr,'/tr',{ arg time,responder,msg;
 
 //Env.adsr(attackTime: 0.1, decayTime: 0.2, sustainLevel: 0.5, releaseTime: 0.2, peakLevel: 1.0).test(1).plot;
 
-s.sendMsg("/s_new", \synth14, 1000, 1, 1, \pan, 0, \amp, 1.0, \p1, -0.5, \p2, 0, \p3, 0);
-s.sendMsg("/n_set", 1000, \gate, 0);
+s.sendMsg("/s_new", \synth4, 1004, 1, 1, \pan, -0.5, \amp, 2.0, \p1, 0.1, \p2, 0, \p3, 0);
+s.sendMsg("/s_new", \synth7, 1003, 1, 1, \pan, 0.5, \amp, 2.0, \p1, 0.1, \p2, 0, \p3, 0);
+s.sendMsg("/s_new", \synth10, 1002, 1, 1, \pan, 0, \amp, 2.0, \p1, -0.2, \p2, 0, \p3, 0.5);
+s.sendMsg("/s_new", \synth12, 1001, 1, 1, \pan, 0, \amp, 1.0, \p1, 0, \p2, 0, \p3, 0);
+s.sendMsg("/s_new", \synth14, 1000, 1, 1, \pan, 0, \amp, 4.0, \p1, -0.5, \p2, 0, \p3, 0);
+s.sendMsg("/n_set", 1001, \gate, 0);
 s.sendMsg("/n_free", 1000);
 
 (
