@@ -33,7 +33,7 @@ var b12 = Buffer.read(s, "/Users/quolc/dev/jphack/sc/sounds/12_violin.wav"); // 
 var b13 = Buffer.read(s, "/Users/quolc/dev/jphack/sc/sounds/13_zanzo.wav"); // ok
 var b14 = Buffer.read(s, "/Users/quolc/dev/jphack/sc/sounds/14_snow.wav"); // ok
 var sample_size = 1.2;
-SynthDef(\synth0, { | p1=0, p2=0, p3=0, p4=0, p5=0, p6=0, pan=0, amp=0.5, gate=1 |
+SynthDef(\synth6, { | p1=0, p2=0, p3=0, p4=0, p5=0, p6=0, pan=0, amp=0.5, gate=1 |
 	var sig, env;
 	var trate = 2 ** (p1 + 3); // p1*2+3 : [1,5]
 	var dur = sample_size / trate;
@@ -159,7 +159,7 @@ SynthDef(\synth5, { | p1=0, p2=0, p3=0, p4=0, p5=0, p6=0, pan=0, amp=0.5, gate=1
 	sig = sig * env;
 	Out.ar(0, sig);
 }).add;
-SynthDef(\synth6, { | p1=0, p2=0, p3=0, p4=0, p5=0, p6=0, pan=0, amp=0.5, gate=1 |
+SynthDef(\synth0, { | p1=0, p2=0, p3=0, p4=0, p5=0, p6=0, pan=0, amp=0.5, gate=1 |
 	var sig, env;
 	var trate = 2 ** (p1*2 + 1); // p1*2+3 : [1,5]
 	var dur = sample_size / trate;
@@ -357,7 +357,7 @@ OSCresponder(s.addr,'/tr',{ arg time,responder,msg;
 
 //Env.adsr(attackTime: 0.1, decayTime: 0.2, sustainLevel: 0.5, releaseTime: 0.2, peakLevel: 1.0).test(1).plot;
 
-s.sendMsg("/s_new", \synth0, 1004, 1, 1, \pan, -0.5, \amp, 2.0, \p1, 0.1, \p2, 0, \p3, 0);
+s.sendMsg("/s_new", \synth1, 1004, 1, 1, \pan, -0.5, \amp, 2.0, \p1, 0.1, \p2, 0, \p3, 0);
 s.sendMsg("/n_set", 1001, \gate, 0);
 s.sendMsg("/n_free", 1000);
 
